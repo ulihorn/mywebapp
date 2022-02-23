@@ -1,0 +1,30 @@
+---
+# tasks file for mywebapp
+
+- name: vars
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: update cache
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == "Debian"
+
+- name: install
+  package:
+    name: "{{ web }}"
+    state: present
+    
+- fail:
+
+- name: web content
+  copy:
+    dest: /var/www/html/index.html
+    content: This is the web content
+    
+- name: start service
+  service:
+    name: "{{ web }}"
+    state: started
+    enabled: true
+
