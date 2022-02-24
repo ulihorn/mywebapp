@@ -15,8 +15,6 @@
     name: "{{ web }}"
     state: present
     
-- fail:
-
 - name: web content
   copy:
     dest: /var/www/html/index.html
@@ -27,4 +25,3 @@
     name: "{{ web }}"
     state: started
     enabled: true
-
