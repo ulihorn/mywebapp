@@ -14,12 +14,12 @@
   package:
     name: "{{ web }}"
     state: present
-    
+
 - name: web content
   copy:
     dest: /var/www/html/index.html
     content: This is the web content
-    
+
 - name: start service
   service:
     name: "{{ web }}"
