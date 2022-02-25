@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distro:
-        - debian10
+        os:
+        - ubuntu-latest
     steps:
     - name: Check out the codebase.
       uses: actions/checkout@v2
