@@ -31,11 +31,4 @@ jobs:
         PY_COLORS: '1'
         ANSIBLE_FORCE_COLOR: '1'
         MOLECULE_DISTRO: ${{ matrix.distro }}
-    - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      with:
-        image: ulihorn/mywebapp-${{ matrix.distro }}
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
    
