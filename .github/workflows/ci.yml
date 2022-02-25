@@ -1,5 +1,5 @@
 ---
-name: CI
+name: CI pipeline
 'on':
   pull_request:
   push:
